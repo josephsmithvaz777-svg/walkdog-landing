@@ -1,0 +1,36 @@
+# Referencia para Coolify — servicio WordPress en app.walkdogentrena.com
+# No ejecutar localmente tal cual; crear el servicio desde la UI de Coolify
+# o importar como Docker Compose con dominio https://app.walkdogentrena.com
+
+services:
+  wordpress:
+    image: wordpress:latest
+    environment:
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress_data:/var/www/html
+    depends_on:
+      - mariadb
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/wp-login.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  mariadb:
+    image: mariadb:11
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  wordpress_data:
+  mariadb_data:

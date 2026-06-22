@@ -1,0 +1,9 @@
+*.md
+sesion-*.md
+IMPLEMENTACION-*.md
+DEPLOY-COOLIFY.md
+compress-landing-images.py
+assets/_originales/
+.git
+.gitignore
+coolify/wordpress/

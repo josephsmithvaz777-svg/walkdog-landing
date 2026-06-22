@@ -1,0 +1,18 @@
+DirectoryIndex index.html
+
+# Forzar HTTPS (Apache directo o detrás de proxy Coolify)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+</IfModule>
+
+Redirect 301 /landing-1.html /
+
+# Vimeo: Referer para peticiones cross-origin desde la home.
+<IfModule mod_headers.c>
+  <FilesMatch "^index\.html$">
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  </FilesMatch>
+</IfModule>

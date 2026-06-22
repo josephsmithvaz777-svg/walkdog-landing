@@ -1,0 +1,6 @@
+*.md
+sesion-*.md
+compress-landing-images.py
+assets/_originales/
+.git
+.gitignore
