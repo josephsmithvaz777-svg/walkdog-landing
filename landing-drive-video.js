@@ -95,30 +95,65 @@
     first.parentNode.insertBefore(tag, first);
   }
 
+  function readVideoCssNum(name, fallback) {
+    var raw = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    var n = parseFloat(raw);
+    return Number.isFinite(n) ? n : fallback;
+  }
+
+  function readVideoTargetWidth(root) {
+    var vw = readVideoCssNum('--video-target-vw', 78);
+    var maxPx = readVideoCssNum('--video-max-px', 1400);
+    var target = Math.min(window.innerWidth * vw / 100, maxPx);
+    var card = root.closest('.video-card');
+    if (card) {
+      var cw = card.getBoundingClientRect().width;
+      if (cw > 0) target = Math.min(target, cw);
+    }
+    var container = root.closest('.hero .container');
+    if (container) {
+      var contW = container.getBoundingClientRect().width;
+      if (contW > 0) target = Math.min(target, contW);
+    }
+    return target;
+  }
+
   function lockVideoAspect(root) {
     if (!getYoutubeId(root) && !getVimeoId(root)) return;
 
     var isVimeo = getVimeoId(root) && !getYoutubeId(root);
     var frame = 0;
     var apply = function () {
-      var w = root.getBoundingClientRect().width;
-      if (!(w > 0)) return;
+      var targetW = readVideoTargetWidth(root);
+      if (!(targetW > 0)) return;
       var snapped;
       var h;
+      var snapStep = readVideoCssNum('--video-snap-step', 4);
+
       if (isVimeo) {
-        snapped = w < 640 ? Math.round(w) : Math.floor(w / 4) * 4;
-        if (snapped < 280) snapped = Math.round(w);
+        var rw = readVideoCssNum('--video-vimeo-ratio-w', 5);
+        var rh = readVideoCssNum('--video-vimeo-ratio-h', 4.15);
+        snapped = targetW < 640 ? Math.round(targetW) : Math.floor(targetW / snapStep) * snapStep;
+        if (snapped < 280) snapped = Math.round(targetW);
         if (snapped < 1) return;
-        h = Math.round((snapped * 3) / 5);
-      } else {
-        snapped = w < 640 ? Math.round(w) : Math.floor(w / 16) * 16;
-        if (snapped < 280) snapped = Math.round(w);
-        if (snapped < 1) return;
-        h = Math.round((snapped * 9) / 16);
+        h = Math.round((snapped * rh) / rw);
+        root.style.width = snapped + 'px';
+        root.style.height = h + 'px';
+        root.style.maxWidth = '100%';
+        root.style.maxHeight = '';
+        root.style.marginLeft = 'auto';
+        root.style.marginRight = 'auto';
+        root.style.aspectRatio = 'auto';
+        return;
       }
+      snapped = targetW < 640 ? Math.round(targetW) : Math.floor(targetW / 16) * 16;
+      if (snapped < 280) snapped = Math.round(targetW);
+      if (snapped < 1) return;
+      h = Math.round((snapped * 9) / 16);
       root.style.width = snapped + 'px';
       root.style.height = h + 'px';
-      root.style.maxWidth = snapped + 'px';
+      root.style.maxWidth = '100%';
+      root.style.maxHeight = '';
       root.style.marginLeft = 'auto';
       root.style.marginRight = 'auto';
       root.style.aspectRatio = 'auto';
@@ -136,6 +171,8 @@
     if (typeof ResizeObserver !== 'undefined') {
       var ro = new ResizeObserver(schedule);
       ro.observe(root);
+      var card = root.closest('.video-card');
+      if (card) ro.observe(card);
       root._wdAspectRo = ro;
     }
     window.addEventListener('resize', schedule, { passive: true });

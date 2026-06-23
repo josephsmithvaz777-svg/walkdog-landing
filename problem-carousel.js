@@ -16,9 +16,11 @@
 
     var active = Math.floor(items.length / 2);
     var timer = null;
-    var paused = false;
     var stepPx = 160;
     var ready = false;
+    var pointerStartX = 0;
+    var pointerStartY = 0;
+    var pointerDragging = false;
 
     function measureStep() {
       var w = items[0] ? items[0].offsetWidth : 300;
@@ -66,6 +68,17 @@
       return diff;
     }
 
+    function syncSliderHeight() {
+      var maxH = 0;
+      items.forEach(function (item) {
+        var h = item.offsetHeight;
+        if (h > maxH) maxH = h;
+      });
+      if (maxH > 0) {
+        slider.style.minHeight = maxH + 16 + 'px';
+      }
+    }
+
     function loadShow(instant) {
       measureStep();
       setTransition(!!instant);
@@ -97,6 +110,8 @@
         item.classList.add('is-side', offset > 0 ? 'is-next' : 'is-prev');
       });
 
+      requestAnimationFrame(syncSliderHeight);
+
       if (instant && !ready) {
         ready = true;
         requestAnimationFrame(function () {
@@ -107,20 +122,24 @@
       }
     }
 
-    function next() {
-      active = (active + 1) % items.length;
+    function goTo(index) {
+      active = ((index % items.length) + items.length) % items.length;
       loadShow(false);
+      startTimer();
+    }
+
+    function next() {
+      goTo(active + 1);
     }
 
     function prev() {
-      active = (active - 1 + items.length) % items.length;
-      loadShow(false);
+      goTo(active - 1);
     }
 
     function startTimer() {
       stopTimer();
       timer = window.setInterval(function () {
-        if (!paused && !document.hidden) next();
+        if (!document.hidden) next();
       }, intervalMs);
     }
 
@@ -131,11 +150,56 @@
       }
     }
 
-    root.addEventListener('mouseenter', function () {
-      paused = true;
+    items.forEach(function (item, i) {
+      item.addEventListener('click', function () {
+        if (i === active) return;
+        goTo(i);
+      });
     });
-    root.addEventListener('mouseleave', function () {
-      paused = false;
+
+    root.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        next();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        prev();
+      }
+    });
+
+    root.addEventListener(
+      'pointerdown',
+      function (event) {
+        if (event.button !== 0) return;
+        pointerDragging = true;
+        pointerStartX = event.clientX;
+        pointerStartY = event.clientY;
+        root.classList.add('is-dragging');
+      },
+      { passive: true }
+    );
+
+    root.addEventListener(
+      'pointerup',
+      function (event) {
+        root.classList.remove('is-dragging');
+        if (!pointerDragging) return;
+        pointerDragging = false;
+
+        var dx = event.clientX - pointerStartX;
+        var dy = event.clientY - pointerStartY;
+
+        if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
+
+        if (dx < 0) next();
+        else prev();
+      },
+      { passive: true }
+    );
+
+    root.addEventListener('pointercancel', function () {
+      pointerDragging = false;
+      root.classList.remove('is-dragging');
     });
 
     document.addEventListener('visibilitychange', function () {
@@ -153,6 +217,13 @@
 
     function boot() {
       loadShow(true);
+      items.forEach(function (item) {
+        var img = item.querySelector('img');
+        if (img && !img.complete) {
+          img.addEventListener('load', syncSliderHeight, { once: true });
+        }
+      });
+      requestAnimationFrame(syncSliderHeight);
       startTimer();
     }
 

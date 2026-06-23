@@ -36,7 +36,7 @@
   <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&display=swap"></noscript>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
-  <link rel="stylesheet" href="landing.css?v=20260621k">
+  <link rel="stylesheet" href="landing.css?v=20260622r">
   <script src="landing-urls.js?v=1"></script>
   <style>
     @keyframes wd-result-in{
@@ -116,7 +116,7 @@
   <section class="problem">
     <div class="container">
       <h2 class="display">esto es lo que viven la <span class="frost-text">mayoría</span> de dueños</h2>
-      <div class="problem-carousel" data-problem-carousel data-interval="4500" aria-roledescription="carrusel">
+      <div class="problem-carousel" data-problem-carousel data-interval="4500" aria-roledescription="carrusel" tabindex="0" aria-label="Carrusel de problemas comunes. Clic en una tarjeta o arrastra para cambiar.">
         <div class="problem-carousel__slider">
         <article class="problem-card">
           <div class="problem-card__surface">
@@ -338,32 +338,67 @@
   <section class="access-included" aria-labelledby="access-heading">
     <div class="container">
       <h2 class="display" id="access-heading">pero sobre todo tienes acceso a:</h2>
-      <div class="access-included__grid">
-        <article class="access-card">
-          <div class="access-card__visual">
-            <img src="assets/card-acceso-1.webp" alt="Clases en vivo y respuestas cuando tengas dudas" width="400" height="400" loading="lazy" decoding="async">
-          </div>
-          <p>Contarán con <strong>CLASES EN VIVO</strong> en <strong>CADA ETAPA</strong>, junto con el apoyo de nuestra comunidad exclusiva, donde resolveremos todas las dudas.</p>
-        </article>
-        <article class="access-card">
-          <div class="access-card__visual">
-            <img src="assets/card-acceso-2.webp" alt="Contenido del curso y actualizaciones con la membresía" width="400" height="400" loading="lazy" decoding="async">
-          </div>
-          <p>Tendrás <strong>ACCESO POR LA MEMBRESÍA</strong> a todo el contenido del curso, y podrás revisar las lecciones todas las veces necesarias, sin importar cuánto tiempo pase.</p>
-        </article>
-        <article class="access-card">
-          <div class="access-card__visual">
-            <img src="assets/card-acceso-3.webp" alt="Curso disponible en varios dispositivos" width="400" height="400" loading="lazy" decoding="async">
-          </div>
-          <p>Podrás avanzar a <strong>TU PROPIO RITMO</strong>, sin importar horario y desde cualquier dispositivo.</p>
-        </article>
-        <article class="access-card">
-          <div class="access-card__visual">
-            <img src="assets/card-acceso-4.webp" alt="Comunidad privada en redes" width="400" height="400" loading="lazy" decoding="async">
-          </div>
-          <p>Obtendrás acceso directo a <strong>NUESTRA COMUNIDAD PRIVADA</strong>, donde podrás compartir tus avances, recibir consejos e interactuar con la comunidad y, sobre todo, con el apoyo del instructor.</p>
-        </article>
+      <div class="access-included__banner">
+        <img
+          src="assets/banner-adiestramiento-entrenamiento.jpg"
+          alt="Entrenamiento canino en campo con instructor y perros"
+          width="1536"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="access-included__banner-overlay" aria-hidden="true"></div>
+        <div class="access-included__banner-caption">
+          <p class="access-included__banner-meta">
+            <span class="access-included__banner-dot" aria-hidden="true"></span>
+            método walkdog · 8 fases en campo
+          </p>
+          <p class="access-included__banner-title">entrenamiento real</p>
+        </div>
       </div>
+      <ol class="access-timeline">
+        <li class="access-timeline__item access-timeline__item--featured">
+          <div class="access-timeline__marker" aria-hidden="true">
+            <span class="access-timeline__dot"></span>
+            <span class="access-timeline__step">01</span>
+          </div>
+          <div class="access-timeline__body">
+            <p class="access-timeline__tag">en vivo</p>
+            <h3 class="access-timeline__title">Clases en vivo en cada etapa</h3>
+            <p class="access-timeline__text">Contarán con <strong>CLASES EN VIVO</strong> en <strong>CADA ETAPA</strong>, junto con el apoyo de nuestra comunidad exclusiva, donde resolveremos todas las dudas.</p>
+          </div>
+        </li>
+        <li class="access-timeline__item">
+          <div class="access-timeline__marker" aria-hidden="true">
+            <span class="access-timeline__dot"></span>
+            <span class="access-timeline__step">02</span>
+          </div>
+          <div class="access-timeline__body">
+            <h3 class="access-timeline__title">Acceso completo por membresía</h3>
+            <p class="access-timeline__text">Tendrás <strong>ACCESO POR LA MEMBRESÍA</strong> a todo el contenido del curso, y podrás revisar las lecciones todas las veces necesarias, sin importar cuánto tiempo pase.</p>
+          </div>
+        </li>
+        <li class="access-timeline__item">
+          <div class="access-timeline__marker" aria-hidden="true">
+            <span class="access-timeline__dot"></span>
+            <span class="access-timeline__step">03</span>
+          </div>
+          <div class="access-timeline__body">
+            <h3 class="access-timeline__title">Tu propio ritmo, cualquier dispositivo</h3>
+            <p class="access-timeline__text">Podrás avanzar a <strong>TU PROPIO RITMO</strong>, sin importar horario y desde cualquier dispositivo.</p>
+          </div>
+        </li>
+        <li class="access-timeline__item">
+          <div class="access-timeline__marker" aria-hidden="true">
+            <span class="access-timeline__dot"></span>
+            <span class="access-timeline__step">04</span>
+          </div>
+          <div class="access-timeline__body">
+            <h3 class="access-timeline__title">Comunidad privada con el instructor</h3>
+            <p class="access-timeline__text">Obtendrás acceso directo a <strong>NUESTRA COMUNIDAD PRIVADA</strong>, donde podrás compartir tus avances, recibir consejos e interactuar con la comunidad y, sobre todo, con el apoyo del instructor.</p>
+          </div>
+        </li>
+      </ol>
       <div class="section-cta">
         <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡Suscribirme ya!</a>
       </div>
@@ -637,8 +672,8 @@
 
 
   <script src="landing-anti-inspect.js" defer></script>
-  <script src="landing-drive-video.js?v=20260620l" defer></script>
-  <script src="problem-carousel.js" defer></script>
+  <script src="landing-drive-video.js?v=20260622r" defer></script>
+  <script src="problem-carousel.js?v=2" defer></script>
   <script src="results-carousel.js?v=20260621b" defer></script>
   <script src="landing-plans.js" defer></script>
   <script>
