@@ -36,7 +36,7 @@
   <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&display=swap"></noscript>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
-  <link rel="stylesheet" href="landing.css?v=20260622r">
+  <link rel="stylesheet" href="landing.css?v=20260622w">
   <script src="landing-urls.js?v=1"></script>
   <style>
     @keyframes wd-result-in{
@@ -67,17 +67,44 @@
 <body class="style-font-root">
   <div class="landing-flow">
   <header class="hero" id="inicio">
-    <div class="hero__overlay"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
     <div class="container hero__content">
       <div class="hero__intro">
-        <span class="eyebrow">Metodo paso a paso para dueños reales</span>
-        <h1 class="display">transforma a tu perro <br><span class="frost-text">sin gritos ni castigos</span></h1>
-        <p>Si tu perro jala la correa, reacciona con otros perros o destruye en casa, este programa te guia por un sistema claro en <span class="frost-text">8 fases</span>.</p>
+        <span class="hero__badge">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          Método paso a paso · 8 fases · Online
+        </span>
+        <h1 class="display hero__title">transforma a tu perro <br><span class="frost-text">sin gritos ni castigos</span></h1>
+        <p class="hero__lead">Si tu perro jala la correa, reacciona con otros perros o destruye en casa, este programa te guía por un sistema claro en <span class="frost-text">8 fases</span>.</p>
+        <ul class="hero__meta">
+          <li>
+            <svg class="hero__meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
+            <span>100% online</span>
+          </li>
+          <li>
+            <svg class="hero__meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2a1 1 0 0 0-1 1v1H5a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3h-1V3a1 1 0 1 0-2 0v1H8V3a1 1 0 0 0-1-1zm12 7H5v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9z" fill="currentColor"/></svg>
+            <span>A tu ritmo</span>
+          </li>
+          <li>
+            <svg class="hero__meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm1 11h4a1 1 0 0 0 0-2h-3V7a1 1 0 0 0-2 0v5a1 1 0 0 0 1 1z" fill="currentColor"/></svg>
+            <span>8 fases guiadas</span>
+          </li>
+        </ul>
       </div>
+    </div>
+  </header>
 
-      <div class="video-card">
+  <section class="hero-video" id="video-presentacion" aria-label="Video de presentación">
+    <div class="hero-video__shell">
+      <div class="hero-video__glow" aria-hidden="true"></div>
+      <div class="hero-video__frame">
+        <div class="hero-video__badges" aria-hidden="true">
+          <span class="hero-video__badge">● Presentación · Método WalkDog</span>
+          <span class="hero-video__badge">8 fases guiadas</span>
+        </div>
         <div
           class="video-wrap video-secure video-embed-root"
+          data-video-layout="cinema"
           data-vimeo-id="1202982270"
           data-youtube-id=""
           data-youtube-origin=""
@@ -90,7 +117,7 @@
           <div class="video-vimeo-mount" id="walkdog-hero-vimeo">
             <iframe
               class="video-vimeo-iframe"
-              src="https://player.vimeo.com/video/1202982270?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;controls=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1&amp;pip=0&amp;keyboard=0&amp;playsinline=1"
+              src="https://player.vimeo.com/video/1202982270?api=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;controls=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1&amp;pip=0&amp;keyboard=0&amp;playsinline=1"
               frameborder="0"
               allow="autoplay; fullscreen; encrypted-media; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
@@ -100,6 +127,7 @@
           <div class="video-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progreso del video">
             <div class="video-progress__fill"></div>
           </div>
+          <button type="button" class="video-vimeo-shield" aria-label="Pausar video"></button>
           <button type="button" class="video-unmute-btn" aria-label="Activar sonido del video">
             <span class="video-unmute-btn__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
@@ -107,11 +135,12 @@
             <span>Activar sonido</span>
           </button>
         </div>
-        <p class="video-audio-hint">*El video inicia en silencio. Pulsa «Activar sonido» para escucharlo.</p>
-        <a href="#membresias" id="walkdog-hero-cta" class="btn-pricing-v2 btn-cta-hero" data-scroll-membresias>¡Suscribirme ya!</a>
+      </div>
+      <div class="hero-video__cta-wrap">
+        <a href="#membresias" id="walkdog-hero-cta" class="btn-pricing-v2 btn-cta-hero hero__cta is-pulsing" data-scroll-membresias>Suscribirme <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
-  </header>
+  </section>
 
   <section class="problem">
     <div class="container">
@@ -522,6 +551,34 @@
             </div>
           </div>
         </div>
+        <div class="testimonial-flip" role="button" tabindex="0" aria-expanded="false" aria-label="Ver testimonio de Mateo Rios">
+          <div class="testimonial-flip__inner">
+            <div class="testimonial-flip__face testimonial-flip__face--front">
+              <img src="assets/43.webp" alt="Mateo Rios con su perro" width="400" height="500" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <div class="testimonial-flip__face testimonial-flip__face--back">
+              <div class="testimonial-flip__back-body">
+                <span class="testimonial-flip__name">Mateo Rios</span>
+                <span class="testimonial-flip__stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="testimonial-flip__text">Empece sin experiencia y el metodo me dio estructura. Mi perro dejo de tirar y ahora salimos con mucha mas confianza los dos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-flip" role="button" tabindex="0" aria-expanded="false" aria-label="Ver testimonio de Laura y Daniel">
+          <div class="testimonial-flip__inner">
+            <div class="testimonial-flip__face testimonial-flip__face--front">
+              <img src="assets/44.webp" alt="Laura y Daniel con su perro" width="400" height="500" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <div class="testimonial-flip__face testimonial-flip__face--back">
+              <div class="testimonial-flip__back-body">
+                <span class="testimonial-flip__name">Laura y Daniel</span>
+                <span class="testimonial-flip__stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="testimonial-flip__text">Entrenamos juntos y por fin coincidimos en como guiar a nuestro perro. En casa esta mas tranquilo y los paseos ya no son un caos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
     <div class="container">
       <p class="testimonials-wall__hint">Toca una foto para leer el testimonio</p>
@@ -672,7 +729,7 @@
 
 
   <script src="landing-anti-inspect.js" defer></script>
-  <script src="landing-drive-video.js?v=20260622r" defer></script>
+  <script src="landing-drive-video.js?v=20260622v" defer></script>
   <script src="problem-carousel.js?v=2" defer></script>
   <script src="results-carousel.js?v=20260621b" defer></script>
   <script src="landing-plans.js" defer></script>
