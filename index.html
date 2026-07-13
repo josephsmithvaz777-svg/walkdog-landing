@@ -36,8 +36,8 @@
   <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&display=swap"></noscript>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
-  <link rel="stylesheet" href="landing.css?v=20260622w">
-  <script src="landing-urls.js?v=1"></script>
+  <link rel="stylesheet" href="landing.css?v=20260712p">
+  <script src="landing-urls.js?v=5"></script>
   <style>
     @keyframes wd-result-in{
       from{opacity:0;transform:translateY(24px)}
@@ -65,7 +65,93 @@
   </style>
 </head>
 <body class="style-font-root">
+  <div class="social-modal" id="social-modal" hidden role="dialog" aria-modal="true" aria-labelledby="social-modal-title">
+    <button type="button" class="social-modal__backdrop" data-social-close aria-label="Cerrar ventana"></button>
+    <div class="social-modal__dialog">
+      <button type="button" class="social-modal__close" data-social-close aria-label="Cerrar">×</button>
+      <div class="social-modal__head">
+        <p class="social-modal__eyebrow">WalkDog Entrena</p>
+        <h2 class="social-modal__title" id="social-modal-title">Conócenos</h2>
+        <p class="social-modal__lead">Síguenos y escríbenos. Estamos para ayudarte con tu perro.</p>
+      </div>
+      <ul class="social-modal__links">
+        <li>
+          <a href="https://www.instagram.com/walkdogperu/" class="social-modal__link social-modal__link--instagram" id="social-link-instagram" target="_blank" rel="noopener noreferrer">
+            <span class="social-modal__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+            </span>
+            <span class="social-modal__link-text">
+              <strong>Instagram</strong>
+              <small>@walkdogperu</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/walkdogperu" class="social-modal__link social-modal__link--facebook" id="social-link-facebook" target="_blank" rel="noopener noreferrer">
+            <span class="social-modal__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.3V12h2.3V9.8c0-2.3 1.3-3.5 3.4-3.5 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12"/></svg>
+            </span>
+            <span class="social-modal__link-text">
+              <strong>Facebook</strong>
+              <small>walkdogperu</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.link/xcijqx" class="social-modal__link social-modal__link--whatsapp" id="social-link-whatsapp" target="_blank" rel="noopener noreferrer">
+            <span class="social-modal__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </span>
+            <span class="social-modal__link-text">
+              <strong>WhatsApp</strong>
+              <small id="social-link-whatsapp-label">913 100 552</small>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div class="landing-flow">
+  <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="#inicio" aria-label="WalkDog — inicio">
+        <img
+          class="site-nav__logo"
+          src="assets/walkdog-logo.webp"
+          alt="WalkDog"
+          width="160"
+          height="48"
+          decoding="async"
+        >
+      </a>
+      <div class="site-nav__actions">
+        <span class="site-nav__menu-hint" aria-hidden="true" title="Menú">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M4 8h16v1.5H4V8zm0 5.25h16V15H4v-1.75z"/></svg>
+        </span>
+        <button
+          type="button"
+          class="site-nav__toggle"
+          id="site-nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav-menu"
+          aria-label="Abrir menú"
+        >
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <div class="site-nav__menu" id="site-nav-menu">
+          <a href="#inicio" class="site-nav__link" data-nav-section="inicio">Inicio</a>
+          <button type="button" class="site-nav__link" data-social-open>Conócenos</button>
+          <a href="#beneficios" class="site-nav__link" data-nav-section="beneficios">Beneficios</a>
+          <a href="#testimonios" class="site-nav__link" data-nav-section="testimonios">Testimonios</a>
+          <a href="#membresias" class="site-nav__link" data-scroll-membresias data-nav-section="membresias">Planes</a>
+        </div>
+        <a href="https://formacion.walkdogentrena.com/login" class="site-nav__login" id="site-nav-login" data-platform-login>Iniciar sesión</a>
+      </div>
+    </div>
+  </nav>
   <header class="hero" id="inicio">
     <div class="hero__glow" aria-hidden="true"></div>
     <div class="container hero__content">
@@ -97,11 +183,11 @@
   <section class="hero-video" id="video-presentacion" aria-label="Video de presentación">
     <div class="hero-video__shell">
       <div class="hero-video__glow" aria-hidden="true"></div>
+      <div class="hero-video__badges" aria-hidden="true">
+        <span class="hero-video__badge">● Presentación · Método WalkDog</span>
+        <span class="hero-video__badge">8 fases guiadas</span>
+      </div>
       <div class="hero-video__frame">
-        <div class="hero-video__badges" aria-hidden="true">
-          <span class="hero-video__badge">● Presentación · Método WalkDog</span>
-          <span class="hero-video__badge">8 fases guiadas</span>
-        </div>
         <div
           class="video-wrap video-secure video-embed-root"
           data-video-layout="cinema"
@@ -137,7 +223,7 @@
         </div>
       </div>
       <div class="hero-video__cta-wrap">
-        <a href="#membresias" id="walkdog-hero-cta" class="btn-pricing-v2 btn-cta-hero hero__cta is-pulsing" data-scroll-membresias>Suscribirme <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
+        <a href="#membresias" id="walkdog-hero-cta" class="btn-pricing-v2 btn-cta-hero hero__cta is-pulsing" data-scroll-membresias>¡SUSCRIBIRME YA!</a>
       </div>
     </div>
   </section>
@@ -200,7 +286,7 @@
         </div>
       </div>
       <div class="section-cta">
-        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡Suscribirme ya!</a>
+        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡SUSCRIBIRME YA!</a>
       </div>
     </div>
   </section>
@@ -291,7 +377,7 @@
         </article>
       </div>
       <div class="section-cta">
-        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡Suscribirme ya!</a>
+        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡SUSCRIBIRME YA!</a>
       </div>
     </div>
   </section>
@@ -359,14 +445,14 @@
         </div>
       </div>
       <div class="section-cta">
-        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡Suscribirme ya!</a>
+        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡SUSCRIBIRME YA!</a>
       </div>
     </div>
   </section>
 
   <section class="access-included" aria-labelledby="access-heading">
     <div class="container">
-      <h2 class="display" id="access-heading">pero sobre todo tienes acceso a:</h2>
+      <h2 class="display" id="access-heading">pero sobre todo tienes <span class="frost-text">acceso</span> a:</h2>
       <div class="access-included__banner">
         <img
           src="assets/banner-adiestramiento-entrenamiento.jpg"
@@ -377,7 +463,7 @@
           decoding="async"
         >
         <div class="access-included__banner-overlay" aria-hidden="true"></div>
-        <div class="access-included__banner-caption">
+        <div class="access-included__banner-caption" id="beneficios">
           <p class="access-included__banner-meta">
             <span class="access-included__banner-dot" aria-hidden="true"></span>
             método walkdog · 8 fases en campo
@@ -429,12 +515,12 @@
         </li>
       </ol>
       <div class="section-cta">
-        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡Suscribirme ya!</a>
+        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡SUSCRIBIRME YA!</a>
       </div>
     </div>
   </section>
 
-  <section class="testimonials" aria-labelledby="testimonials-heading">
+  <section class="testimonials" id="testimonios" aria-labelledby="testimonials-heading">
     <div class="container">
       <h2 class="display testimonials__title" id="testimonials-heading">lo que dicen quienes ya aplicaron el <span class="frost-text">método</span></h2>
     </div>
@@ -583,7 +669,7 @@
     <div class="container">
       <p class="testimonials-wall__hint">Toca una foto para leer el testimonio</p>
       <div class="section-cta">
-        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡Suscribirme ya!</a>
+        <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡SUSCRIBIRME YA!</a>
       </div>
     </div>
   </section>
@@ -591,43 +677,61 @@
   <section class="pricing" id="membresias" aria-labelledby="pricing-heading">
     <div class="container">
       <span class="eyebrow eyebrow--light">Membresías WalkDog</span>
-      <h2 class="display" id="pricing-heading">elige el plan para <span class="frost-text">transformar</span> a tu perro</h2>
-      <p class="pricing__lead">Sin gritos ni castigos. Resultados reales en casa y en la calle.</p>
+      <h2 class="display pricing__heading-main" id="pricing-heading">SISTEMA <span class="frost-text">VÍCTOR PRIETO</span></h2>
+      <p class="pricing__lead pricing__lead--tagline">tu perro cambia cuando tú aprendes a guiarlo</p>
 
       <div class="pricing__grid">
         <article class="pricing-card pricing-card--plan-1" data-plan="1">
           <header class="pricing-card__head">
             <div class="pricing-card__head-text">
-              <h3 class="pricing-card__title">Plan Básico</h3>
-              <p class="pricing-card__tag">Inicio y control en casa</p>
+              <h3 class="pricing-card__title">START</h3>
+              <p class="pricing-card__tag">"DESCUBRE EL MÉTODO"</p>
+              <p class="pricing-card__subtitle">Entiende por qué tu perro no te obedece</p>
             </div>
             <span class="pricing-card__badge">Plan mensual</span>
           </header>
           <hr class="pricing-card__divider" aria-hidden="true">
           <div class="pricing-card__visual">
             <div class="pricing-card__avatar">
-              <img src="assets/img-dog-plan-1.webp" alt="Perro en plan básico WalkDog" loading="lazy" decoding="async">
+              <img src="assets/img-dog-plan-1.webp" alt="Perro en plan START" loading="lazy" decoding="async">
             </div>
           </div>
-          <ul class="pricing-card__highlights">
-            <li>Módulos 0, 1 y 2 completos</li>
-            <li>Inicio del Módulo 4: Nombre, Mírame, Sentado</li>
-            <li class="is-muted">Sin comunidad ni clases en vivo</li>
-          </ul>
+          <div class="pricing-card__details">
+            <div class="pricing-card__section">
+              <h4 class="pricing-card__section-title">Qué obtienes:</h4>
+              <ul class="pricing-card__features">
+                <li>Acceso inicial al Sistema Víctor Prieto</li>
+                <li>Los 5 errores que destruyen la obediencia de tu perro</li>
+                <li>Psicología canina aplicada a la vida real</li>
+                <li>Cómo generar respeto y vínculo desde el día 1</li>
+                <li>Cómo corregir ladridos, ansiedad y desorden en casa</li>
+                <li>Método base de paseo con control</li>
+                <li>Introducción a comandos esenciales</li>
+                <li>Primer protocolo de corrección en casa</li>
+                <li>Acceso a comunidad de dueños en proceso</li>
+              </ul>
+            </div>
+            <div class="pricing-card__section">
+              <h4 class="pricing-card__section-title">Ideal para:</h4>
+              <p class="pricing-card__ideal">Personas que sienten:<em>"Mi perro me quiere… pero no me respeta"</em></p>
+            </div>
+            <p class="pricing-card__result">🐶 Empiezas a recuperar control y liderazgo en casa</p>
+          </div>
           <div class="pricing-card__pricing">
             <div class="pricing-card__price-row">
               <p class="pricing-card__amount"><span class="pricing-card__currency">$</span>50</p>
-              <p class="pricing-card__period">/ Mensuales</p>
+              <p class="pricing-card__period">USD / mes</p>
             </div>
-            <a href="https://app.walkdogentrena.com/checkout/?level=1" class="btn-pricing-v2">¡Suscribirme ya!</a>
+            <a href="#" class="btn-pricing-v2" data-checkout-plan="basico">¡SUSCRIBIRME YA!</a>
           </div>
         </article>
 
         <article class="pricing-card pricing-card--plan-2 pricing-card--featured" data-plan="2">
           <header class="pricing-card__head">
             <div class="pricing-card__head-text">
-              <h3 class="pricing-card__title">Plan Intermedio</h3>
-              <p class="pricing-card__tag">Transformación real</p>
+              <h3 class="pricing-card__title">CONTROL</h3>
+              <p class="pricing-card__tag">"CLUB VÍCTOR PRIETO"</p>
+              <p class="pricing-card__subtitle">Donde los dueños se convierten en líderes reales</p>
             </div>
             <span class="pricing-card__badge pricing-card__badge--accent">Plan mensual</span>
           </header>
@@ -635,53 +739,116 @@
           <div class="pricing-card__visual pricing-card__visual--with-ribbon">
             <span class="pricing-card__ribbon">Más elegido</span>
             <div class="pricing-card__avatar">
-              <img src="assets/img-dog-plan-2.webp" alt="Perro en plan intermedio WalkDog" loading="lazy" decoding="async">
+              <img src="assets/img-dog-plan-2.webp" alt="Perro en plan CONTROL" loading="lazy" decoding="async">
             </div>
           </div>
-          <ul class="pricing-card__highlights">
-            <li>Módulos 0 al 6 completos</li>
-            <li>Comunidad privada 30 días + clases</li>
-            <li>Checklist PDF y casos reales</li>
-          </ul>
+          <div class="pricing-card__details">
+            <div class="pricing-card__section">
+              <h4 class="pricing-card__section-title">Qué obtienes:</h4>
+              <ul class="pricing-card__features">
+                <li>Todo el sistema START incluido</li>
+                <li>Mentorías grupales en vivo con Víctor Prieto</li>
+                <li>Corrección de videos de tu perro</li>
+                <li>Diagnóstico real de comportamiento</li>
+                <li>Casos reales analizados cada semana</li>
+                <li>Planes de acción personalizados</li>
+                <li>Nuevos protocolos cada mes</li>
+                <li>Biblioteca de entrenamientos en crecimiento</li>
+                <li>Entrenamientos en vivo</li>
+                <li>Comunidad privada activa</li>
+              </ul>
+            </div>
+            <div class="pricing-card__section">
+              <h4 class="pricing-card__section-title">Ideal para:</h4>
+              <p class="pricing-card__ideal">Personas que ya intentaron de todo y dicen:<em>"Necesito que alguien me guíe paso a paso"</em></p>
+            </div>
+            <p class="pricing-card__result">🐶 Transformas comportamiento real con acompañamiento constante</p>
+          </div>
           <div class="pricing-card__pricing">
             <div class="pricing-card__price-row">
               <p class="pricing-card__amount"><span class="pricing-card__currency">$</span>100</p>
-              <p class="pricing-card__period">/ Mensuales</p>
+              <p class="pricing-card__period">USD / mes</p>
             </div>
-            <a href="https://app.walkdogentrena.com/checkout/?level=2" class="btn-pricing-v2">¡Suscribirme ya!</a>
+            <a href="#" class="btn-pricing-v2" data-checkout-plan="intermedio">¡SUSCRIBIRME YA!</a>
           </div>
         </article>
 
-        <article class="pricing-card pricing-card--plan-3" data-plan="3">
+        <article class="pricing-card pricing-card--plan-3 pricing-card--elite" data-plan="3">
+          <div class="pricing-card__elite-glow" aria-hidden="true"></div>
+          <span class="pricing-card__elite-badge">Inner Circle</span>
           <header class="pricing-card__head">
             <div class="pricing-card__head-text">
-              <h3 class="pricing-card__title">Plan Premium</h3>
-              <p class="pricing-card__tag">Con Baruch / Víctor</p>
+              <h3 class="pricing-card__title pricing-card__title--elite">ELITE</h3>
+              <p class="pricing-card__tag pricing-card__tag--elite">Sistema completo · +5000 perros</p>
+              <p class="pricing-card__subtitle">Acceso al método profesional de Víctor Prieto</p>
             </div>
             <span class="pricing-card__badge pricing-card__badge--premium">Plan anual</span>
           </header>
-          <hr class="pricing-card__divider" aria-hidden="true">
-          <div class="pricing-card__visual">
-            <div class="pricing-card__avatar">
-              <img src="assets/img-dog-plan-3.webp" alt="Perro en plan premium WalkDog" loading="lazy" decoding="async">
+          <hr class="pricing-card__divider pricing-card__divider--elite" aria-hidden="true">
+          <div class="pricing-card__visual pricing-card__visual--elite">
+            <div class="pricing-card__avatar pricing-card__avatar--elite">
+              <img src="assets/img-dog-plan-3.webp" alt="Perro en plan ELITE" loading="lazy" decoding="async">
             </div>
           </div>
-          <ul class="pricing-card__highlights">
-            <li>Módulos 0 al 8 completos + bonus</li>
-            <li>Mentoría, Meet inicial y feedback</li>
-            <li>Soporte prioritario y certificado</li>
-          </ul>
+          <div class="pricing-card__details">
+            <div class="pricing-card__section pricing-card__section--elite">
+              <h4 class="pricing-card__section-title">Qué obtienes:</h4>
+              <ul class="pricing-card__features pricing-card__features--elite">
+                <li>Todo lo del CLUB incluido</li>
+                <li>Acceso total a la biblioteca premium completa</li>
+                <li>+150 horas de entrenamiento real en campo</li>
+                <li>Protocolos profesionales usados en casos reales</li>
+                <li>Sistema completo de evaluación de conducta canina</li>
+                <li>Diseño de programas de entrenamiento desde cero</li>
+                <li>Casos avanzados (agresividad, ansiedad, dominancia, etc.)</li>
+                <li>Sesiones exclusivas con Víctor Prieto</li>
+                <li>Acceso prioritario a consultas personales</li>
+                <li>Actualizaciones constantes del sistema</li>
+                <li>Comunidad VIP de alto nivel</li>
+              </ul>
+            </div>
+            <button type="button" class="pricing-card__bonus-btn pricing-card__bonus-btn--elite" data-elite-bonus-open aria-haspopup="dialog" aria-controls="elite-bonus-modal">
+              <span class="pricing-card__bonus-btn-label">Ver bonus exclusivos</span>
+              <span class="pricing-card__bonus-btn-plus" aria-hidden="true">+</span>
+            </button>
+            <p class="pricing-card__result pricing-card__result--elite">🐶 Te conviertes en alguien capaz de entender, corregir y liderar perros a nivel profesional</p>
+          </div>
           <div class="pricing-card__pricing">
             <div class="pricing-card__price-row">
-              <p class="pricing-card__amount"><span class="pricing-card__currency">$</span>1000</p>
-              <p class="pricing-card__period">/ Anuales</p>
+              <p class="pricing-card__amount pricing-card__amount--elite"><span class="pricing-card__currency">$</span>1000</p>
+              <p class="pricing-card__period pricing-card__period--elite">USD / año · acceso limitado</p>
             </div>
-            <a href="https://app.walkdogentrena.com/checkout/?level=3" class="btn-pricing-v2">¡Suscribirme ya!</a>
+            <a href="#" class="btn-pricing-v2 btn-pricing-v2--elite" data-checkout-plan="premium">¡SUSCRIBIRME YA!</a>
           </div>
         </article>
       </div>
     </div>
   </section>
+
+  <div class="elite-bonus-modal" id="elite-bonus-modal" hidden role="dialog" aria-modal="true" aria-labelledby="elite-bonus-title">
+    <button type="button" class="elite-bonus-modal__backdrop" data-elite-bonus-close aria-label="Cerrar ventana"></button>
+    <div class="elite-bonus-modal__dialog">
+      <div class="elite-bonus-modal__shine" aria-hidden="true"></div>
+      <button type="button" class="elite-bonus-modal__close" data-elite-bonus-close aria-label="Cerrar">×</button>
+      <div class="elite-bonus-modal__head">
+        <span class="elite-bonus-modal__mark" aria-hidden="true">◆</span>
+        <p class="elite-bonus-modal__eyebrow">Plan ELITE · Inner Circle</p>
+        <h2 class="elite-bonus-modal__title" id="elite-bonus-title">Bonus exclusivos</h2>
+        <p class="elite-bonus-modal__lead">Contenido premium reservado para miembros de alto nivel</p>
+      </div>
+      <ul class="elite-bonus-modal__gifts">
+        <li><span class="elite-bonus-modal__gift-icon" aria-hidden="true">🎁</span> Masterclasses privadas nunca publicadas</li>
+        <li><span class="elite-bonus-modal__gift-icon" aria-hidden="true">🎁</span> Casos reales documentados de +5000 perros</li>
+        <li><span class="elite-bonus-modal__gift-icon" aria-hidden="true">🎁</span> Plantillas profesionales de entrenamiento</li>
+        <li><span class="elite-bonus-modal__gift-icon" aria-hidden="true">🎁</span> Certificación del Método Víctor Prieto</li>
+      </ul>
+      <p class="elite-bonus-modal__notice">⚠️ Acceso no automático · Cupos limitados o por aprobación</p>
+      <div class="elite-bonus-modal__ideal">
+        <h3 class="elite-bonus-modal__ideal-title">Ideal para</h3>
+        <p>Personas que buscan el nivel más alto del sistema y están listas para liderar a nivel profesional.</p>
+      </div>
+    </div>
+  </div>
 
   <section class="faq" id="faq" aria-labelledby="faq-heading">
     <div class="container">
@@ -716,23 +883,239 @@
       </div>
     </div>
   </section>
-  </div>
 
   <section class="final-cta" id="cta">
-    <div class="container">
-      <h2 class="display">empieza hoy el cambio con tu <span class="frost-text">canino</span></h2>
-      <p>No necesitas experiencia previa. Solo seguir el sistema paso a paso.</p>
-      <a href="#membresias" class="btn-pricing-v2" data-scroll-membresias>¡Suscribirme ya!</a>
-      <a href="https://app.walkdogentrena.com/mi-area/" class="btn btn-outline">Ir a la plataforma</a>
+    <div class="container final-cta__grid">
+      <div class="final-cta__copy">
+        <h2 class="final-cta__title">
+          <span class="final-cta__title-line">el sistema</span>
+          <span class="final-cta__title-line final-cta__title-line--accent">
+            <span class="final-cta__title-name frost-text">víctor prieto</span>
+          </span>
+        </h2>
+        <p class="final-cta__lead">tu perro cambia cuando tú aprendes a guiarlo</p>
+        <div class="final-cta__actions">
+          <a href="#membresias" class="btn-pricing-v2 final-cta__btn-primary" data-scroll-membresias>¡SUSCRIBIRME YA!</a>
+        </div>
+      </div>
+      <div class="final-cta__media" aria-hidden="false">
+        <div class="final-cta__glow" aria-hidden="true"></div>
+        <img
+          class="final-cta__photo"
+          src="assets/VICTOR-PRIETO.webp"
+          alt="Víctor Prieto — entrenador canino"
+          width="640"
+          height="800"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
     </div>
   </section>
 
+  <footer class="site-footer" id="footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__grid">
+        <section class="site-footer__col" aria-labelledby="footer-contact-title">
+          <h2 class="site-footer__title" id="footer-contact-title">Contáctanos</h2>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="mailto:formacion@walkdogentrena.com">
+                <span class="site-footer__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5.1L4 8.2V6l8 5.1L20 6z"/></svg>
+                </span>
+                <span>Escríbenos a <u>formacion@walkdogentrena.com</u></span>
+              </a>
+            </li>
+            <li>
+              <a class="site-footer__link" href="mailto:soporte@walkdogentrena.com">
+                <span class="site-footer__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5.1L4 8.2V6l8 5.1L20 6z"/></svg>
+                </span>
+                <span>Escríbenos a: <u>soporte@walkdogentrena.com</u></span>
+              </a>
+            </li>
+            <li>
+              <a class="site-footer__link" id="footer-link-instagram" href="https://www.instagram.com/walkdogperu/" target="_blank" rel="noopener noreferrer">
+                <span class="site-footer__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                </span>
+                <span>Instagram · @walkdogperu</span>
+              </a>
+            </li>
+            <li>
+              <a class="site-footer__link" href="#faq">
+                <span class="site-footer__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm1 15h-2v-2h2zm1.07-7.75-.9.92A1.99 1.99 0 0 0 12 12h-1v-1a2 2 0 0 1 .59-1.42l1.24-1.26A1.5 1.5 0 0 0 13 7.5 1.5 1.5 0 1 0 11.5 6h-1A2.5 2.5 0 0 1 13 3.5a2.5 2.5 0 0 1 1.07 4.75z"/></svg>
+                </span>
+                <span>¿Dudas? Revisa <u>Preguntas frecuentes</u></span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="site-footer__col" aria-labelledby="footer-explore-title">
+          <h2 class="site-footer__title" id="footer-explore-title">Explora</h2>
+          <ul class="site-footer__list site-footer__list--plain">
+            <li><a class="site-footer__link" href="#inicio">Inicio</a></li>
+            <li><a class="site-footer__link" href="#beneficios">Beneficios</a></li>
+            <li><a class="site-footer__link" href="#testimonios">Testimonios</a></li>
+            <li><a class="site-footer__link" href="#membresias" data-scroll-membresias>Planes</a></li>
+            <li><button type="button" class="site-footer__link site-footer__link--btn" data-social-open>Conócenos</button></li>
+          </ul>
+        </section>
+
+        <section class="site-footer__col" aria-labelledby="footer-info-title">
+          <h2 class="site-footer__title" id="footer-info-title">Información</h2>
+          <ul class="site-footer__list site-footer__list--plain">
+            <li><a class="site-footer__link" href="#faq">Preguntas frecuentes</a></li>
+            <li><a class="site-footer__link" href="#cta">El sistema Víctor Prieto</a></li>
+            <li><a class="site-footer__link" href="https://formacion.walkdogentrena.com/login" data-platform-login>Iniciar sesión</a></li>
+            <li><a class="site-footer__link" href="#membresias" data-scroll-membresias>Adquirir un plan</a></li>
+            <li><a class="site-footer__link" href="politica-cookies.html">Política de cookies</a></li>
+            <li><button type="button" class="site-footer__link site-footer__link--btn" data-cookie-open>Preferencias de cookies</button></li>
+          </ul>
+          <p class="site-footer__note">Formación online · Método en 8 fases</p>
+        </section>
+
+        <section class="site-footer__col site-footer__col--brand" aria-label="WalkDog">
+          <a class="site-footer__brand" href="#inicio" aria-label="WalkDog — inicio">
+            <img
+              class="site-footer__logo"
+              src="assets/walkdog-logo.webp"
+              alt="WalkDog"
+              width="240"
+              height="72"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+          <div class="site-footer__social" aria-label="Redes sociales">
+            <a class="site-footer__social-btn" id="footer-social-whatsapp" href="https://wa.link/xcijqx" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </a>
+            <a class="site-footer__social-btn" id="footer-social-instagram" href="https://www.instagram.com/walkdogperu/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+            </a>
+            <a class="site-footer__social-btn" id="footer-social-facebook" href="https://www.facebook.com/walkdogperu" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.3V12h2.3V9.8c0-2.3 1.3-3.5 3.4-3.5 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12"/></svg>
+            </a>
+          </div>
+          <p class="site-footer__copy">© 2026 WalkDog · Sistema Víctor Prieto</p>
+          <p class="site-footer__copy site-footer__copy--muted">Todos los derechos reservados</p>
+        </section>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  <aside class="promo-float" id="promo-float" hidden>
+    <button type="button" class="promo-float__close" id="promo-float-close" aria-label="Cerrar promoción">
+      <span class="promo-float__close-x" aria-hidden="true">×</span>
+    </button>
+    <a
+      href="#membresias"
+      class="promo-float__link"
+      data-checkout-plan="premium"
+      aria-label="Promoción Plan ELITE — suscribirme"
+    >
+      <span class="promo-float__circle">
+        <img
+          class="promo-float__img"
+          src="assets/btn-promo-elite-floating.webp"
+          alt="PROMO! Plan ELITE"
+          width="168"
+          height="168"
+          decoding="async"
+        >
+      </span>
+    </a>
+  </aside>
+
+  <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-modal="false" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-text">
+    <div class="cookie-banner__panel">
+      <div class="cookie-banner__head">
+        <span class="cookie-banner__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2a10 10 0 1 0 9.95 11.13 2.5 2.5 0 0 1-3.45-3.45A2.5 2.5 0 0 1 15 6.5a2.5 2.5 0 0 1-2.87-2.45A10 10 0 0 0 12 2zm-3.5 8a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm1.75 5.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM16 13.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+        </span>
+        <p class="cookie-banner__title" id="cookie-banner-title">Autorización de uso de cookies</p>
+      </div>
+      <p class="cookie-banner__text" id="cookie-banner-text">
+        Usamos cookies para mejorar tu experiencia de navegación y, si las aceptas, para publicidad.
+        Para conocer más, revisa nuestra
+        <a href="politica-cookies.html">Política de Cookies</a>.
+        Si deseas personalizar el uso, haz clic en
+        <button type="button" class="cookie-banner__text-btn" data-cookie-config>Configuración</button>,
+        o gestiona las cookies desde tu navegador.
+      </p>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-config>Configuración</button>
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--solid" id="cookie-accept-all">Acepto todas las cookies</button>
+      </div>
+      <a class="cookie-banner__policy" href="politica-cookies.html">Ver la política de cookies</a>
+    </div>
+  </div>
+
+  <div class="cookie-modal" id="cookie-modal" hidden role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+    <button type="button" class="cookie-modal__backdrop" data-cookie-modal-close aria-label="Cerrar configuración"></button>
+    <div class="cookie-modal__dialog">
+      <button type="button" class="cookie-modal__close" data-cookie-modal-close aria-label="Cerrar">×</button>
+      <h2 class="cookie-modal__title" id="cookie-modal-title">Configuración de cookies</h2>
+
+      <div class="cookie-modal__list">
+        <details class="cookie-modal__item" open>
+          <summary class="cookie-modal__summary">
+            <span class="cookie-modal__summary-left">
+              <span class="cookie-modal__chevron" aria-hidden="true"></span>
+              <span>Seguridad y autenticación</span>
+            </span>
+            <span class="cookie-modal__badge">Siempre activas</span>
+          </summary>
+          <p class="cookie-modal__desc">Son imprescindibles para el funcionamiento básico del sitio, seguridad y recordar tu elección de cookies.</p>
+        </details>
+
+        <details class="cookie-modal__item">
+          <summary class="cookie-modal__summary">
+            <span class="cookie-modal__summary-left">
+              <span class="cookie-modal__chevron" aria-hidden="true"></span>
+              <span>Publicidad y analítica</span>
+            </span>
+            <label class="cookie-switch" onclick="event.stopPropagation()">
+              <input type="checkbox" id="cookie-toggle-marketing" checked>
+              <span class="cookie-switch__ui" aria-hidden="true"></span>
+              <span class="visually-hidden">Activar cookies de publicidad</span>
+            </label>
+          </summary>
+          <p class="cookie-modal__desc">Permiten medir campañas y mostrar anuncios relevantes (Meta Pixel, AdSense u otras herramientas de publicidad).</p>
+        </details>
+
+        <details class="cookie-modal__item">
+          <summary class="cookie-modal__summary">
+            <span class="cookie-modal__summary-left">
+              <span class="cookie-modal__chevron" aria-hidden="true"></span>
+              <span>Cookies técnicas</span>
+            </span>
+            <span class="cookie-modal__badge">Siempre activas</span>
+          </summary>
+          <p class="cookie-modal__desc">Ayudan a que la página cargue y funcione correctamente. No se usan para publicidad.</p>
+        </details>
+      </div>
+
+      <div class="cookie-modal__footer">
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--solid" id="cookie-save-prefs">Guardar preferencias</button>
+      </div>
+    </div>
+  </div>
 
   <script src="landing-anti-inspect.js" defer></script>
-  <script src="landing-drive-video.js?v=20260622v" defer></script>
+  <script src="landing-drive-video.js?v=20260704b" defer></script>
   <script src="problem-carousel.js?v=2" defer></script>
   <script src="results-carousel.js?v=20260621b" defer></script>
-  <script src="landing-plans.js" defer></script>
+  <script src="landing-urls.js?v=5" defer></script>
+  <script src="landing-nav.js?v=11" defer></script>
+  <script src="landing-plans.js?v=4" defer></script>
+  <script src="landing-cookies.js?v=3" defer></script>
+  <script src="landing-promo-float.js?v=1" defer></script>
   <script>
     (function () {
       var wall = document.querySelector('[data-testimonials-flip]');
