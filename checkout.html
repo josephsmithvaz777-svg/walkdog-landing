@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | WalkDog</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="landing.css?v=20260704g">
+  <script src="landing-urls.js?v=4"></script>
+</head>
+<body class="style-font-root checkout-page">
+  <header class="checkout-topbar container">
+    <a href="index.html#membresias" class="checkout-topbar__back">← Volver a planes</a>
+    <a href="index.html" class="checkout-topbar__brand" aria-label="WalkDog — inicio">
+      <img
+        class="checkout-topbar__logo"
+        src="assets/walkdog-logo.webp"
+        alt="WalkDog"
+        width="140"
+        height="42"
+        decoding="async"
+      >
+    </a>
+    <p class="checkout-topbar__account">
+      ¿Ya tienes cuenta?
+      <a href="#" id="checkout-topbar-login" data-platform-login>Iniciar sesión</a>
+    </p>
+  </header>
+
+  <main class="checkout-layout container" id="checkout-app">
+    <header class="checkout-layout__header">
+      <span class="eyebrow eyebrow--light">Membresías WalkDog</span>
+      <h1 class="display checkout-layout__heading" id="checkout-heading">
+        completa tu <span class="frost-text">inscripción</span>
+      </h1>
+      <p class="pricing__lead checkout-layout__lead">Sin gritos ni castigos. Acceso inmediato tras el pago.</p>
+    </header>
+
+    <div class="checkout-layout__grid">
+      <section class="checkout-layout__plan" aria-labelledby="checkout-plan-name">
+        <article id="checkout-plan-card" class="pricing-card checkout-plan-card pricing-card--plan-1">
+          <div class="checkout-plan-card__top">
+            <div class="checkout-plan-card__avatar" id="checkout-plan-visual">
+              <img id="checkout-plan-image" src="assets/img-dog-plan-1.webp" alt="Perro en plan WalkDog" width="72" height="72">
+            </div>
+            <header class="pricing-card__head checkout-plan-card__head">
+              <div class="pricing-card__head-text">
+                <h2 class="pricing-card__title" id="checkout-plan-name">START</h2>
+                <p class="pricing-card__tag" id="checkout-plan-tag">"DESCUBRE EL MÉTODO"</p>
+                <p class="pricing-card__subtitle" id="checkout-plan-subtitle">Entiende por qué tu perro no te obedece</p>
+              </div>
+              <span class="pricing-card__badge" id="checkout-plan-badge">Plan mensual</span>
+            </header>
+          </div>
+          <span class="pricing-card__ribbon is-hidden" id="checkout-plan-ribbon" aria-hidden="true">Más elegido</span>
+          <ul class="pricing-card__features checkout-plan-card__features" id="checkout-plan-features"></ul>
+          <p class="checkout-plan-card__more" id="checkout-plan-more" hidden>
+            <button type="button" class="checkout-plan-card__toggle" id="checkout-plan-toggle" aria-expanded="false" aria-controls="checkout-plan-details">
+              Ver plan completo
+            </button>
+          </p>
+          <div class="checkout-plan-card__details" id="checkout-plan-details" hidden>
+            <h3 class="checkout-plan-card__details-title">Qué incluye tu plan</h3>
+            <ul class="pricing-card__features checkout-plan-card__details-list" id="checkout-plan-details-list"></ul>
+            <div class="checkout-plan-card__details-extra" id="checkout-plan-details-extra" hidden></div>
+            <p class="checkout-plan-card__ideal" id="checkout-plan-details-ideal" hidden></p>
+            <p class="pricing-card__result checkout-plan-card__result" id="checkout-plan-details-result" hidden></p>
+          </div>
+          <div class="pricing-card__pricing checkout-plan-card__pricing">
+            <div class="pricing-card__price-row">
+              <p class="pricing-card__amount" id="checkout-plan-amount"><span class="pricing-card__currency">$</span>50</p>
+              <p class="pricing-card__period" id="checkout-plan-period">USD / mes</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="checkout-layout__form" aria-labelledby="checkout-form-title">
+        <article class="pricing-card checkout-form-card">
+          <header class="pricing-card__head">
+            <div class="pricing-card__head-text">
+              <h2 class="pricing-card__title" id="checkout-form-title">Tus datos</h2>
+              <p class="pricing-card__tag">Crea tu acceso y completa el pago</p>
+            </div>
+          </header>
+          <hr class="pricing-card__divider" aria-hidden="true">
+
+          <form id="checkout-form" class="checkout-form" novalidate>
+            <input type="hidden" name="plan" id="checkout-plan-slug" value="">
+
+            <div class="checkout-form__section">
+              <h3 class="checkout-form__label">Contacto</h3>
+              <label class="checkout-field">
+                <span>Correo electrónico</span>
+                <input type="email" name="email" id="checkout-email" autocomplete="email" placeholder="tu@correo.com" required>
+                <small class="checkout-field__hint">Un solo correo: se usa para tu cuenta y el pago con tarjeta.</small>
+              </label>
+              <label class="checkout-field">
+                <span>Nombre completo</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Tu nombre" required>
+              </label>
+            </div>
+
+            <div class="checkout-form__section">
+              <h3 class="checkout-form__label">Crea tu acceso</h3>
+              <label class="checkout-field">
+                <span>Contraseña</span>
+                <input type="password" name="password" autocomplete="new-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+              </label>
+              <label class="checkout-field">
+                <span>Confirmar contraseña</span>
+                <input type="password" name="password_confirmation" autocomplete="new-password" minlength="8" required>
+              </label>
+            </div>
+
+            <p id="checkout-error" class="checkout-error" hidden></p>
+
+            <div class="checkout-form__section checkout-form__section--payment">
+              <h3 class="checkout-form__label">Datos de tarjeta</h3>
+              <div id="culqi-container" class="culqi-embed is-loading">
+                <p class="culqi-embed__loading">Cargando formulario de pago seguro…</p>
+              </div>
+              <p class="checkout-payment__note">🔒 Pago seguro con Culqi. No almacenamos los datos de tu tarjeta.</p>
+              <button type="button" id="culqi-fallback-btn" class="checkout-fallback-btn" hidden>
+                Abrir pago con tarjeta
+              </button>
+            </div>
+
+            <p class="checkout-login">
+              ¿Ya tienes cuenta?
+              <a href="#" id="checkout-login-link" data-platform-login>Inicia sesión en la plataforma</a>
+            </p>
+          </form>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script src="landing-checkout.js?v=17" defer></script>
+</body>
+</html>

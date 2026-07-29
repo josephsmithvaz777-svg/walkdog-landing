@@ -31,14 +31,14 @@
     function setTransition(instant) {
       var value = instant
         ? 'none'
-        : 'transform 0.68s cubic-bezier(0.45, 0, 0.22, 1), opacity 0.55s ease, filter 0.55s ease';
+        : 'transform 0.45s cubic-bezier(0.45, 0, 0.22, 1), opacity 0.38s ease, filter 0.38s ease';
       items.forEach(function (item) {
         item.style.transition = value;
         var surface = item.querySelector('.problem-card__surface');
         if (surface) {
           surface.style.transition = instant
             ? 'none'
-            : 'box-shadow 0.68s ease';
+            : 'box-shadow 0.45s ease';
         }
       });
     }

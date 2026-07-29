@@ -139,12 +139,11 @@
     var apply = function () {
       if (isCinemaVideo(root)) {
         var cinemaFrame = root.closest('.hero-video__frame');
-        var box = cinemaFrame
-          ? cinemaFrame.getBoundingClientRect()
-          : root.getBoundingClientRect();
-        var cw = Math.round(box.width);
-        var ch = Math.round(box.height);
-        if (!(cw > 0 && ch > 0)) return;
+        var cw = cinemaFrame
+          ? Math.round(cinemaFrame.getBoundingClientRect().width)
+          : Math.round(root.getBoundingClientRect().width);
+        if (!(cw > 0)) return;
+        var ch = Math.round((cw * 9) / 16);
         root.style.width = cw + 'px';
         root.style.height = ch + 'px';
         root.style.maxWidth = 'none';
